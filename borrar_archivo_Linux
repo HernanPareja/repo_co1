@@ -1,0 +1,6 @@
+---
+  tasks:
+   - name: borra fichero
+     win_file:
+       path: C:\Users\hapareja\Desktop\test.txt
+       state: absent
