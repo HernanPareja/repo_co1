@@ -1,6 +1,9 @@
 ---
+- name: Elimina fichero o directorio Linux
+  hosts: all
+  become: yes
   tasks:
-   - name: borra fichero
-     win_file:
-       path: C:\Users\hapareja\Desktop\test.txt
+   - name: Eliminar
+     ansible.builtin.file:
+       path: /home/hapareja/test/file.txt
        state: absent
