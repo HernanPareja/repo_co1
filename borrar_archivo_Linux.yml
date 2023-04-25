@@ -5,6 +5,8 @@
   tasks:
    - name: Eliminar
      ansible.builtin.file:
-       path: /home/hapareja/test/file.txt
+#       path: /home/hapareja/test/file.txt
+     path: "{{ tempfile }}"
        state: absent
-#pruyebasa
+       when: tempfile is defined
+
