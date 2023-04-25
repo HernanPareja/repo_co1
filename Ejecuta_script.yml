@@ -1,15 +1,12 @@
 ---
-- name: Eliminar fichero
+- name: Ejecuta script
   hosts: all
 #  become: yes
   tasks:
-    - name: imprime ruta buscada
+    - name: Se va a ejecutar el siguiente script
       debug:
-        msg: "{{ tempfile }}"
-    - name: Eliminar
-      ansible.builtin.file:  
-        path: "{{ tempfile }}"
-        state: absent
-      when: tempfile is defined
-      
-     
+        msg: "{{ script.text }}"
+        
+    - name: Ejecuta un script con argumentos
+      ansible.builtin.script: script.text
+
