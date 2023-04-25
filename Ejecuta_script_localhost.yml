@@ -1,0 +1,11 @@
+---
+- name: Ejecuta script en localhost
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Se va a ejecutar el siguiente script
+      debug:
+        msg: "{{ script_text }}"
+        
+    - name: Ejecuta un script con argumentos
+      ansible.builtin.script: "{{ script_text }}"
