@@ -5,8 +5,8 @@
   tasks:
     - name: Se va a ejecutar el siguiente script
       debug:
-        msg: "{{ script.text }}"
+        msg: "{{ script_text }}"
         
     - name: Ejecuta un script con argumentos
-      ansible.builtin.script: script.text
+      ansible.builtin.script: "{{ script_text }}"
 
