@@ -3,6 +3,9 @@
   hosts: all
   become: yes
   tasks:
+    - name: imprime ruta buscada
+      debug:
+        msg: "{{ tempfile }}"
     - name: Eliminar
       ansible.builtin.file:  
         path: "{{ tempfile }}"
