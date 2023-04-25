@@ -1,20 +1,15 @@
 ---
-- name: Reiniciar multiples servicios Linux desde un fichero en repo
+- name: Eliminar fichero
   hosts: all
   become: yes
-  vars: 
-    contents: "{{ lookup('file', './roles/win_pilot/files/lservices.txt').splitlines() }}"
   tasks:
-    - name: Muestra contenido
-      debug:  
-        msg: "{{ contents }}"
+    - name: Eliminar
+      ansible.builtin.file:  
+        path: "{{ tempfile }}"
+        state: absent
+        when: tempfile is defined
         
-    - name: Reiniciar servicios Linux
-      ansible.builtin.systemd:
-        state: restarted
-        name: "{{ item }}"
-      with_items:
-      - "{{ contents }}"
+
         
 #        state: stopped
 #        state: started
