@@ -1,12 +1,11 @@
 ---
-- name: Elimina fichero o directorio Linux
   hosts: all
   become: yes
   tasks:
    - name: Eliminar
      ansible.builtin.file:
 #       path: /home/hapareja/test/file.txt
-     path: "{{ tempfile }}"
-       state: absent
-       when: tempfile is defined
+      path: "{{ tempfile }}"
+      state: absent
+      when: tempfile is defined
 
