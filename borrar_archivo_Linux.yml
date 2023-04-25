@@ -1,5 +1,5 @@
 ---
-#- name: Elimina fichero o directorio Linux
+- name: Elimina fichero o directorio Linux
   hosts: all
   become: yes
   tasks:
