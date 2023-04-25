@@ -10,7 +10,7 @@
       ansible.builtin.file:  
         path: "{{ tempfile }}"
         state: absent
-        when: tempfile is defined
+      when: tempfile is defined
         
 
         
