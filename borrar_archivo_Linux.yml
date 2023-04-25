@@ -1,13 +1,12 @@
 ---
-  - name: Eliminar archivo en una ruta indicada
-    hosts: all
-    become: yes
-    tasks:
-      - name: Eliminar
-        ansible.builtin.file:
-          path: "{{ tempfile }}"
-          state: absent
-        when: tempfile is defined
+- hosts: all
+  become: yes
+  tasks:
+    - name: Eliminar
+      ansible.builtin.file:
+        path: "{{ tempfile }}"
+        state: absent
+      when: tempfile is defined
         
         
         
