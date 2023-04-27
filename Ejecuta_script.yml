@@ -25,4 +25,4 @@
 ######################################################################################
 
     - name: Run a script with arguments (free form)
-      ansible.builtin.script: ""{{ script_text }}""
+      ansible.builtin.script: "{{ script_text }}"
