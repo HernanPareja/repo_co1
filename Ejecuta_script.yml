@@ -16,5 +16,6 @@
         cmd: "{{ script_text }}"
         chdir: /opt
       register: data_out
-      debug:
+      
+    - debug:
         msg: "{{ data_out }}"
