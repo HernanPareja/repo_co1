@@ -3,20 +3,20 @@
   hosts: all
 #  become: yes
   tasks:
-    - name: Se va a ejecutar el siguiente script #se requiere indicar ruta en la misma linea
-      debug:
-        msg: "{{ script_text }}"
-        
-    - name: Ejecuta la linea de comandos
-      ansible.builtin.script: 
-        cmd: "{{ script_text }}"
-    
-#####################################################################################
-#    - name: Cambia de directorio de trabajo y ejecuta linea de comandos
-#      ansible.builtin.shell:
+#    - name: Se va a ejecutar el siguiente script #se requiere indicar ruta en la misma linea
+#      debug:
+#        msg: "{{ script_text }}"
+#        
+#    - name: Ejecuta la linea de comandos
+#      ansible.builtin.script: 
 #        cmd: "{{ script_text }}"
-#        chdir: /opt
-#      register: data_out
-#      
-#    - debug:
-#        msg: "{{ data_out }}"
+#    
+#####################################################################################
+    - name: Cambia de directorio de trabajo y ejecuta linea de comandos
+      ansible.builtin.shell:
+        cmd: "{{ script_text }}"
+        chdir: /opt
+      register: data_out
+      
+    - debug:
+        msg: "{{ data_out }}"
