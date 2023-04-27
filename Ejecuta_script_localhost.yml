@@ -10,11 +10,17 @@
 #    - name: Ejecuta un script con argumentos
 #      ansible.builtin.script: "{{ script_text }}"
 ################################################################################      
-    - name: Cambia de directorio de trabajo y ejecuta linea de comandos
-      ansible.builtin.shell:
-        cmd: "{{ script_text }}"
-        chdir: /opt
-      register: data_out
-      
-    - debug:
-        msg: "{{ data_out }}"
+#    - name: Cambia de directorio de trabajo y ejecuta linea de comandos
+#      ansible.builtin.shell:
+#        cmd: "{{ script_text }}"
+#        chdir: /opt
+#      register: data_out
+#      
+#    - debug:
+#        msg: "{{ data_out }}"
+################################################################################        
+        
+    - name: Change the working directory to somedir/ before executing the command
+      ansible.builtin.shell: "{{ script_text }}"
+      args:
+        chdir: "{{ ruta_script }}"
