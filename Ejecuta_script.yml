@@ -2,15 +2,15 @@
 - name: Ejecuta script
   hosts: all
 #  become: yes
-#  tasks:
+  tasks:
 #    - name: Se va a ejecutar el siguiente script
 #      debug:
 #        msg: "{{ script_text }}"
-        
+#        
 #    - name: Ejecuta un script con argumentos
 #      ansible.builtin.script: "{{ script_text }}"
-      
-      
+#      
+#      
     - name: This command will change the working directory to somedir/
       ansible.builtin.shell:
         cmd: "{{ script_text }}"
