@@ -3,9 +3,18 @@
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Se va a ejecutar el siguiente script
-      debug:
-        msg: "{{ script_text }}"
-        
-    - name: Ejecuta un script con argumentos
-      ansible.builtin.script: "{{ script_text }}"
+#    - name: Se va a ejecutar el siguiente script
+#      debug:
+#        msg: "{{ script_text }}"
+#        
+#    - name: Ejecuta un script con argumentos
+#      ansible.builtin.script: "{{ script_text }}"
+################################################################################      
+    - name: Cambia de directorio de trabajo y ejecuta linea de comandos
+      ansible.builtin.shell:
+        cmd: "{{ script_text }}"
+        chdir: /opt
+      register: data_out
+      
+    - debug:
+        msg: "{{ data_out }}"
