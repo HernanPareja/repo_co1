@@ -15,8 +15,10 @@
     - name: Cambia de directorio de trabajo y ejecuta linea de comandos
       ansible.builtin.shell:
         cmd: "{{ script_text }}"
-        chdir: /opt
+        chdir: "{{ ruta_script }}"
       register: data_out
-      
+    
+    - debug:
+        msg: Ejecutando "{{ ruta_script }}" "{{ script_text }}"
     - debug:
         msg: "{{ data_out }}"
