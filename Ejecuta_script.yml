@@ -14,5 +14,5 @@
     - name: This command will change the working directory to somedir/
       ansible.builtin.shell:
         cmd: "{{ script_text }}"
-        chdir: opt/
+        chdir: /opt
 
