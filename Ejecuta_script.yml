@@ -25,6 +25,6 @@
 ######################################################################################
 
     - name: Change the working directory to somedir/ before executing the command
-      ansible.builtin.shell: sh prueba.sh
+      ansible.builtin.shell: "{{ script_text }}"
       args:
-        chdir: /tmp/
+        chdir: "{{ ruta_script }}"
