@@ -12,13 +12,17 @@
 #        cmd: "{{ script_text }}"
 #    
 #####################################################################################
-    - name: Cambia de directorio de trabajo y ejecuta linea de comandos
-      ansible.builtin.shell:
-        cmd: "{{ script_text }}"
-        chdir: "{{ ruta_script }}"
-      register: data_out
-    
-    - debug:
-        msg: Ejecutando "{{ ruta_script }}" "{{ script_text }}"
-    - debug:
-        msg: "{{ data_out }}"
+#    - name: Cambia de directorio de trabajo y ejecuta linea de comandos
+#      ansible.builtin.shell:
+#        cmd: "{{ script_text }}"
+#        chdir: "{{ ruta_script }}"
+#      register: data_out
+#    
+#    - debug:
+#        msg: Ejecutando "{{ ruta_script }}" "{{ script_text }}"
+#    - debug:
+#        msg: "{{ data_out }}"
+######################################################################################
+
+    - name: Run a script with arguments (free form)
+      ansible.builtin.script: ""{{ script_text }}""
