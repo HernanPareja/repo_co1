@@ -15,4 +15,6 @@
       ansible.builtin.shell:
         cmd: "{{ script_text }}"
         chdir: /opt
-
+      register: data_out
+      debug:
+        msg: "{{ data_out }}"
