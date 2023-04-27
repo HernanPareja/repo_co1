@@ -24,5 +24,7 @@
 #        msg: "{{ data_out }}"
 ######################################################################################
 
-    - name: Run a script with arguments (free form)
-      ansible.builtin.script: "{{ script_text }}"
+    - name: Change the working directory to somedir/ before executing the command
+      ansible.builtin.shell: prueba.sh
+      args:
+        chdir: /tmp/
